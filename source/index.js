@@ -4,10 +4,11 @@ const Barcode = require('./Barcode.js');
 const plugin = new Plugin(require('../package.json'));
 
 plugin.name = 'Barcode';
+plugin.prefix = '/barcode';
 plugin.register = (server) => server.route([
 	{
 		method: 'GET',
-		path: '/barcode/qr/{content}',
+		path: '/qr/{content}',
 		handler(request, h) {
 			const { query, params } = request;
 
@@ -18,7 +19,7 @@ plugin.register = (server) => server.route([
 	},
 	{
 		method: 'GET',
-		path: '/barcode/{type}/{content}',
+		path: '/{type}/{content}',
 		handler(request, h) {
 			const { query, params } = request;
 
