@@ -1,0 +1,16 @@
+{
+  "name": "@magneds/hapi-plugin-barcode",
+  "version": "0.0.0",
+  "description": "Bar-/QRCode creation endpoints for Hapi",
+  "main": "source/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rogier Spieker <rogier.spieker@magneds.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@magneds/hapi-plugin": "^1.0",
+    "pure-svg-code": "^1.0.5"
+  }
+}
