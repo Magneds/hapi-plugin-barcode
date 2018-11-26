@@ -3,7 +3,7 @@ const QR = require('./QR.js');
 const Barcode = require('./Barcode.js');
 const plugin = new Plugin(require('../package.json'));
 
-plugin.name = 'Barcode';
+plugin.name = 'barcode';
 plugin.prefix = '/barcode';
 plugin.register = (server) => server.route([
 	{
