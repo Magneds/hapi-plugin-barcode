@@ -6,7 +6,7 @@ const defaults = {
 	height: 256,
 	color: 'currentColor',
 	background: 'transparent',
-	ecl: 'H',
+	ecl: 'H'
 };
 
 /**
@@ -30,13 +30,14 @@ function ratio(options) {
 	return options;
 }
 
-module.exports = (input) => new Promise((resolve, reject) => {
-	const options = { ...defaults, ...ratio(input) };
-	const svg = qrcode(options);
+module.exports = (input) =>
+	new Promise((resolve, reject) => {
+		const options = { ...defaults, ...ratio(input) };
+		const svg = qrcode(options);
 
-	if (svg) {
-		return resolve(svg);
-	}
+		if (svg) {
+			return resolve(svg);
+		}
 
-	return reject({ message: 'Invalid QR-code content', code: 400 });
-});
+		return reject({ message: 'Invalid QR-code content', code: 400 });
+	});
