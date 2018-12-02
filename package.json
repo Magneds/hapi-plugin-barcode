@@ -2,6 +2,9 @@
 	"name": "@magneds/hapi-plugin-barcode",
 	"version": "0.0.0",
 	"description": "Bar-/QRCode creation endpoints for Hapi",
+	"publishConfig": {
+		"@magneds:registry": "https://registry.npmjs.org"
+	},
 	"main": "source/index.js",
 	"scripts": {
 		"test": "node_modules/.bin/lab -vclr",
