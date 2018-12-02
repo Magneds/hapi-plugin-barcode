@@ -9,26 +9,13 @@ plugin.register = (server) =>
 	server.route([
 		{
 			method: 'GET',
-			path: '/qr/{content}',
-			handler(request, h) {
-				const { query, params } = request;
-
-				return QR({ ...query, ...params })
-					.then((svg) =>
-						h.response(svg).header('content-type', 'image/svg+xml')
-					)
-					.catch(({ code, message }) =>
-						h.response(message).code(code)
-					);
-			}
-		},
-		{
-			method: 'GET',
 			path: '/{type}/{content}',
-			handler(request, h) {
+			async handler(request, h) {
 				const { query, params } = request;
+				const { type } = params;
+				const renderer = /^qr$/.test(type) ? QR : Barcode;
 
-				return Barcode({ ...query, ...params })
+				return renderer({ ...query, ...params })
 					.then((svg) =>
 						h.response(svg).header('content-type', 'image/svg+xml')
 					)
@@ -39,4 +26,4 @@ plugin.register = (server) =>
 		}
 	]);
 
-module.exports = plugin.export;
+module.exports = plugin.exports;

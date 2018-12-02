@@ -4,7 +4,7 @@
 	"description": "Bar-/QRCode creation endpoints for Hapi",
 	"main": "source/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "node_modules/.bin/lab -vclr",
 		"check-style": "node_modules/.bin/eslint source/**/*.js && echo 'No problems found'",
 		"fix-style": "node_modules/.bin/eslint --fix source/**/*.js"
 	},
@@ -16,9 +16,13 @@
 		"pure-svg-code": "^1.0.5"
 	},
 	"devDependencies": {
+		"@magneds/hapi-server": "^1.0.0",
+		"code": "^5.2.4",
 		"eslint": "^5.9.0",
 		"eslint-config-prettier": "^3.3.0",
 		"eslint-plugin-prettier": "^3.0.0",
+		"hapi": "^17.8.1",
+		"lab": "^18.0.0",
 		"prettier": "^1.15.3"
 	}
 }

@@ -1,0 +1,198 @@
+{
+	"register": [
+		{
+			"description": "default registration",
+			"prefix": "/barcode"
+		},
+		{
+			"description": "custom registration",
+			"prefix": "/foo/bar/baz"
+		}
+	],
+	"tests": [
+		{
+			"type": "unknown",
+			"code": "error",
+			"expect": {
+				"statusCode": 404,
+				"contentType": "text/html; charset=utf-8",
+				"body": null
+			}
+		},
+		{
+			"type": "qr",
+			"code": "hello world",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+width=\"256\"[^>]+height=\"256\"[^>]*>"
+			}
+		},
+		{
+			"type": "qr",
+			"code": "hello world",
+			"params": {
+				"width": 100
+			},
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+width=\"100\"[^>]+height=\"100\"[^>]*>"
+			}
+		},
+		{
+			"type": "qr",
+			"code": "hello world",
+			"params": {
+				"height": 100
+			},
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+width=\"100\"[^>]+height=\"100\"[^>]*>"
+			}
+		},
+		{
+			"type": "qr",
+			"code": "hello world",
+			"params": {
+				"height": 100,
+				"width": 200
+			},
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+width=\"200\"[^>]+height=\"100\"[^>]*>"
+			}
+		},
+		{
+			"type": "codabar",
+			"code": "31117013206375",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "codabar",
+			"code": "foo-bar-baz",
+			"expect": {
+				"statusCode": 400,
+				"contentType": "text/html; charset=utf-8",
+				"body": null
+			}
+		},
+		{
+			"type": "code11",
+			"code": "0123452",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "code11",
+			"code": "0!23452",
+			"expect": {
+				"statusCode": 400,
+				"contentType": "text/html; charset=utf-8",
+				"body": null
+			}
+		},
+		{
+			"type": "code39",
+			"code": "GSJ-220097",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+viewBox=\"0 0 \\d+ \\d+\"[^>]*>"
+			}
+		},
+		{
+			"type": "code39",
+			"code": "GSJ-220097",
+			"params": {
+				"width": 1000
+			},
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null,
+				"pattern": "<svg[^>]+viewBox=\"0 0 1000 \\d+\"[^>]*>"
+			}
+		},
+		{
+			"type": "code39",
+			"code": "GSJ!220097",
+			"expect": {
+				"statusCode": 400,
+				"contentType": "text/html; charset=utf-8",
+				"body": null
+			}
+		},
+		{
+			"type": "code93",
+			"code": "GSJ-220097",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "code128",
+			"code": "RI 476 394 652 CH",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "ean8",
+			"code": "96385074",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "ean13",
+			"code": "5901234123457",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "std25",
+			"code": "967072",
+			"params": {
+				"background": "#ff0"
+			},
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		},
+		{
+			"type": "int25",
+			"code": "00614141000418",
+			"expect": {
+				"statusCode": 200,
+				"contentType": "image/svg+xml",
+				"body": null
+			}
+		}
+	]
+}

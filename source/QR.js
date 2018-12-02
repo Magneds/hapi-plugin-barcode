@@ -35,9 +35,5 @@ module.exports = (input) =>
 		const options = { ...defaults, ...ratio(input) };
 		const svg = qrcode(options);
 
-		if (svg) {
-			return resolve(svg);
-		}
-
-		return reject({ message: 'Invalid QR-code content', code: 400 });
+		return resolve(svg);
 	});
