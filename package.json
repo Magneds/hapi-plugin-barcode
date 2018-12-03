@@ -11,11 +11,18 @@
 		"check-style": "node_modules/.bin/eslint source/**/*.js && echo 'No problems found'",
 		"fix-style": "node_modules/.bin/eslint --fix source/**/*.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Magneds/hapi-plugin-barcode.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Magneds/hapi-plugin-barcode/issues"
+	},
 	"keywords": [],
 	"author": "Rogier Spieker <rogier.spieker@magneds.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@magneds/hapi-plugin": "^1.0.0",
+		"@magneds/hapi-plugin-barcode": "^1.0.0",
 		"pure-svg-code": "^1.0.5"
 	},
 	"devDependencies": {
