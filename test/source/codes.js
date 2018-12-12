@@ -4,7 +4,7 @@ const Lab = require('lab');
 const { expect } = require('code');
 const { experiment, beforeEach, test } = (exports.lab = Lab.script());
 
-const HapiPluginBarcode = require('../..');
+const HapiPluginBarcode = require('../../source');
 
 function query(obj) {
 	const string = Object.keys(obj)
@@ -100,6 +100,15 @@ experiments.forEach((exp) => {
 							expect(item.expect.body).to.be.null();
 							item.expect.body = response.result;
 						}
+
+						const post = await server.inject({
+							method: 'POST',
+							url: `${reg.prefix}/${
+								item.type
+							}/${encodeURIComponent(item.code)}${param}`
+						});
+
+						expect(post.result).to.equal(response.result);
 					});
 				});
 			});

@@ -8,7 +8,7 @@ plugin.prefix = '/barcode';
 plugin.register = (server) =>
 	server.route([
 		{
-			method: 'GET',
+			method: ['GET', 'POST'],
 			path: '/{type}/{content}',
 			async handler(request, h) {
 				const { query, params } = request;
