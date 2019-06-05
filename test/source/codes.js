@@ -1,7 +1,7 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const HapiServer = require('@magneds/hapi-server');
-const Lab = require('lab');
-const { expect } = require('code');
+const Lab = require('@hapi/lab');
+const { expect } = require('@hapi/code');
 const { experiment, beforeEach, test } = (exports.lab = Lab.script());
 
 const HapiPluginBarcode = require('../../source');

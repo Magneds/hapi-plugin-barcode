@@ -22,17 +22,17 @@
 	"author": "Rogier Spieker <rogier.spieker@magneds.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@magneds/hapi-plugin": "^1.0.0",
+		"@magneds/hapi-plugin": "^1.0.2",
 		"pure-svg-code": "^1.0.5"
 	},
 	"devDependencies": {
-		"@magneds/hapi-server": "^1.0.0",
-		"code": "^5.2.4",
+		"@hapi/code": "^5.3.1",
+		"@hapi/hapi": "^18.3.1",
+		"@hapi/lab": "^19.0.1",
+		"@magneds/hapi-server": "^1.0.2",
 		"eslint": "^5.9.0",
-		"eslint-config-prettier": "^3.3.0",
+		"eslint-config-prettier": "^4.3.0",
 		"eslint-plugin-prettier": "^3.0.0",
-		"hapi": "^17.8.1",
-		"lab": "^18.0.0",
 		"prettier": "^1.15.3"
 	}
 }
