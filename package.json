@@ -23,16 +23,16 @@
 	"license": "MIT",
 	"dependencies": {
 		"@magneds/hapi-plugin": "^1.0.2",
-		"pure-svg-code": "^1.0.5"
+		"pure-svg-code": "^1.0.6"
 	},
 	"devDependencies": {
 		"@hapi/code": "^5.3.1",
 		"@hapi/hapi": "^18.3.1",
-		"@hapi/lab": "^19.0.1",
-		"@magneds/hapi-server": "^1.0.2",
-		"eslint": "^5.9.0",
-		"eslint-config-prettier": "^4.3.0",
-		"eslint-plugin-prettier": "^3.0.0",
-		"prettier": "^1.15.3"
+		"@hapi/lab": "^19.1.0",
+		"@magneds/hapi-server": "^1.0.3",
+		"eslint": "^6.0.1",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"prettier": "^1.18.2"
 	}
 }
